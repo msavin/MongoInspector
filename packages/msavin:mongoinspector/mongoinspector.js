@@ -3,13 +3,9 @@ if (Meteor.isClient) {
     Template.body.helpers({
         MongoInspector_enabled: function() {
 
-            var url       = Meteor.absoluteUrl(),
-                localhost = url.indexOf("http://localhost"),
-                cordova   = Meteor.isCordova;
-
-            if (localhost === -1) {
-                return false;
-            } else if (cordova   === true) {
+            var cordova   = Meteor.isCordova;
+            
+            if (cordova   === true) {
                 return false;
             } else {
                 return true;
