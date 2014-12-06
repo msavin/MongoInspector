@@ -5,12 +5,10 @@ if (Meteor.isClient) {
 
             var url       = Meteor.absoluteUrl(),
                 localhost = url.indexOf("http://localhost"),
-                disabled  = !Session.get("MongoInspector"),
                 cordova   = Meteor.isCordova;
 
-            if        (disabled  === true) {
-                return false;
-            } else if (localhost === -1) {
+
+            if (localhost === -1) {
                 return false;
             } else if (cordova   === true) {
                 return false;
@@ -20,14 +18,32 @@ if (Meteor.isClient) {
 
         },
         MongoInspector_collections: function () {
-            var    collections = Session.get("MongoInspector");
+                        
+            // Forked from shanedonnelly1 
+
+            var collections = [];
+
+            for (var globalObject in window) { 
+                if (globalObject === "webkitStorageInfo") {
+                    continue;
+                }
+                if (window[globalObject] instanceof Meteor.Collection) {
+                    collections.push({
+                        "name": globalObject,
+                        // "collection": window[globalObject]
+                    });
+                }
+            }
+
             return collections;
+            
         }
     });
 
     Template.body.events({
         'click .MongoInspector_row': function () {
-            var thisCollection = window[this];
+            var collectionName = this.name;
+            var thisCollection = window[collectionName];
             console.log(thisCollection.find().fetch());
         },
         'click .MongoInspector_header': function () {
@@ -36,11 +52,9 @@ if (Meteor.isClient) {
     });
 
     Template.MongoInspector_collection.helpers({
-        collectionName: function() {
-            return this;
-        },
         collectionCount: function () {
-            var thisCollection = window[this];
+            var collectionName = this.name;
+            var thisCollection = window[collectionName];
             return thisCollection.find().count();
         }
     });

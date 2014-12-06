@@ -3,9 +3,7 @@ Your        = new Meteor.Collection('Your');
 Collections = new Meteor.Collection('Collections');
 
 if (Meteor.isClient) {
-	// Initialize MongoInspector
-		Session.set("MongoInspector", ["List", "Your", "Collections"]);
-
+	
 	// Print Console Messages
 		console.log("# MongoInspector");
 		console.log("- Autopublish and insecure are on by default for you to test it out.");
