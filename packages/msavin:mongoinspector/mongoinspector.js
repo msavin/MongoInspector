@@ -7,7 +7,6 @@ if (Meteor.isClient) {
                 localhost = url.indexOf("http://localhost"),
                 cordova   = Meteor.isCordova;
 
-
             if (localhost === -1) {
                 return false;
             } else if (cordova   === true) {
@@ -18,7 +17,8 @@ if (Meteor.isClient) {
 
         },
         MongoInspector_collections: function () {
-                        
+              
+            // Detecting Collections automatically 
             // Forked from shanedonnelly1 
 
             var collections = [];
