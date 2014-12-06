@@ -1,0 +1,41 @@
+<body>
+	{{#if MongoInspector_enabled}}
+		<div id="MongoInspector">	
+			{{> MongoInspector_header}}
+			{{#if MongoInspector_collections}}
+				{{#each MongoInspector_collections}}
+					{{> MongoInspector_collection}}
+				{{/each}}
+			{{else}}
+				{{> MongoInspector_setup}}
+			{{/if}}
+		</div>
+	{{/if}}
+</body>
+
+<template name="MongoInspector_collection">
+	<div class="MongoInspector_row">
+		{{collectionName}}
+		<div class="MongoInspector_count">
+			{{collectionCount}}
+		</div>
+	</div>
+</template>
+
+<template name="MongoInspector_setup">
+	<a href="http://mongoinspector.meteor.com/">
+		<div class="MongoInspector_row">
+			Congratulations on installing MongoInspector.<br>
+			Please refer to the <u>docs</u> to activate it.
+		</div>
+	</a>
+</template>
+
+<template name="MongoInspector_header">
+	<div class="MongoInspector_header">
+		MongoInspector
+	<!-- 	<div class="MongoInspector_close">
+			&times;
+		</div> -->
+	</div>
+</template>

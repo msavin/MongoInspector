@@ -1,0 +1,51 @@
+/* CSS declarations go here */
+body {
+	background: rgb(220,220,220);
+	color: rgb(90,90,90);
+	font-family: arial;
+	font-size: 14px;
+	line-height: 22px;
+	margin: 0px;
+	padding: 0px 26px;
+	-webkit-font-smoothing: antialiased;
+
+	background-color: rgb(220,220,220);
+	background-image: -moz-linear-gradient(rgb(220,220,220), rgb(255,255,255));
+	background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(rgb(220,220,220)), to(rgb(255,255,255)));
+	background-image: -webkit-linear-gradient(rgb(220,220,220), rgb(255,255,255));
+	background-image: -o-linear-gradient(rgb(220,220,220), rgb(255,255,255));
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='rgb(220,220,220)', endColorstr='rgb(255,255,255)',GradientType=0);
+}
+
+.body {
+	max-width: 600px;
+	margin: 0 auto;
+}
+
+
+.title {
+	font-weight: bold;
+	font-size: 24px;
+	text-align: center;
+	background: rgb(50,50,50);
+
+	color: rgb(255,255,255);
+	padding: 16px 0;
+	margin: 0 -26px;
+
+}
+
+
+.header {
+	font-weight: bold;
+	margin-left: -15px;
+	color: rgb(50,50,50);
+
+}
+
+code {
+	background: rgb(255,255,255);
+}
+span {
+	font-family: Courier, "Lucidatypewriter", Fixed, monospace;
+}

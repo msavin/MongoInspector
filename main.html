@@ -1,0 +1,51 @@
+<head>
+  <title>MongoInspector</title>
+  <meta name="viewport"        content="minimum-scale=1.0, width=device-width, maximum-scale=1, user-scalable=no, minimal-ui, mobile-web-app-capable, height=device-height" />
+</head>
+
+<body>
+	<div class="title">
+		MongoInspector for Meteor
+	</div>
+	<div class="body">
+		<br>
+		<div class="header">#&nbsp; Less Time in Console, More Time Building</div>
+		A big part of the Meteor game is publishing and subscribing to data. However, as you change your routes and/or subscriptions, you may accidentally unsubscribe or oversubscribe to data without noticing it. That's why I created this package - to give you a real-time window into how your application and collections are operating. It's great for beginners to observe how collections work, and for experts to build even faster. 
+		<br><br>
+
+		<div class="header">#&nbsp; Main Benefits</div>
+		<span>&bull;</span> Watch your collections update in real-time in the browser  (see bottom left corner)<br>
+		<span>&bull;</span> Click on a collection to run "<code>console.log(Collection.find().fetch())</code>"<br>
+		<span>&bull;</span> Click on the title to remove it from the window<br>
+		<br>
+
+		<div class="header">#&nbsp; How To Install</div>
+		<span>1.</span> Run "<code>meteor add msavin:mongoinspector</code>"<br>
+		<span>2.</span> Add and configure on the client: "<code>Session.set("MongoInspector", ["List", "Your", "Collections"]);</code>"<br>
+		<br>
+
+		<div class="header">#&nbsp; Questions &amp; Answers</div>
+		<span>Q:</span> Will this hurt the performance of my application?<br>
+		<span>A:</span> Absolutely not. MongoInspector is light (&lt;3kb pre-minifaction), and only lives on the client.<br>
+		<br>
+
+		<span>Q:</span> Will this run in production or Cordova?<br>
+		<span>A:</span> No, it only runs if the URL is "http://localhost", and is not Cordova. <br>
+		<br>
+
+		<span>Q:</span> How do I turn it off without removing the package?<br>
+		<span>A:</span> You can click on the widget's title to close or, or completely disable it by adding "<code>Session.set("MongoInspector", false);</code>" after the initial session variable <br>
+		<br>
+
+		<span>Q:</span> What is the future of MongoInspector?<br>
+		<span>A:</span> Currently, the package is simple and stable. The ultimate goal is to create a visual way for you to browse your client side data and see how your client is operating in real time. I'd love to hear your feedback on this package and where you think it should go as well.<br>
+		<br>
+
+		<div class="header">#&nbsp; Thanks for reading! Feel free to contact me!</div>
+		&bull; Max Savin<br>
+		&bull; <a href="http://twitter.com/msavin" target="_blank">@msavin</a><br>
+		&bull; <a href="mailto:contact@maxsavin.com?subject=MongoInspector">contact@maxsavin.com</a><br>
+		&bull; <a href="http://maxsavin.com">maxsavin.com</a><br>
+		<br>
+	</div>
+</body>
