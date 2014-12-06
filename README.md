@@ -1,7 +1,7 @@
 MongoInspector
 ==============
 
-Meteor package for visualizing your collections in the browser
+Meteor package for visualizing your collections in the browser.
 To learn more, go to http://mongoinspector.meteor.com
 
 # To Install:
