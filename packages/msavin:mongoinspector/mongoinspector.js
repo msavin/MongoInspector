@@ -4,7 +4,8 @@ if (Meteor.isClient) {
         MongoInspector_enabled: function() {
 
             var cordova   = Meteor.isCordova;
-            
+
+
             if (cordova   === true) {
                 return false;
             } else {
@@ -39,7 +40,7 @@ if (Meteor.isClient) {
     Template.body.events({
         'click .MongoInspector_row': function () {
             var collectionName = this.name;
-            var thisCollection = window[collectionName];
+            var thisCollection = getPropByString(window, collectionName);
             console.log(thisCollection.find().fetch());
         },
         'click .MongoInspector_header': function () {
@@ -50,9 +51,34 @@ if (Meteor.isClient) {
     Template.MongoInspector_collection.helpers({
         collectionCount: function () {
             var collectionName = this.name;
-            var thisCollection = window[collectionName];
+            var thisCollection = getPropByString(window, collectionName);
             return thisCollection.find().count();
         }
     });
+
+    /* Thanks to Richard Smith (rjsmith)
+
+    /**
+     * @rsbatech: Recursively access sub-properties from a dotted property path
+     * From: http://stackoverflow.com/a/6906859
+     **/
+    function getPropByString(obj, propString) {
+        if (!propString)
+            return obj;
+
+        var prop, props = propString.split('.');
+
+        for (var i = 0, iLen = props.length - 1; i < iLen; i++) {
+            prop = props[i];
+
+            var candidate = obj[prop];
+            if (candidate !== undefined) {
+                obj = candidate;
+            } else {
+                break;
+            }
+        }
+        return obj[props[i]];
+    }
 
 }

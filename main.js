@@ -2,8 +2,12 @@ List        = new Meteor.Collection('List');
 Your        = new Meteor.Collection('Your');
 Collections = new Meteor.Collection('Collections');
 
+// var MyApp;
+// var myCollection = new Mongo.Collection('mycollection');
+// MyApp.myCollection = myCollection;
+
 if (Meteor.isClient) {
-	
+
 	// Print Console Messages
 		console.log("# MongoInspector");
 		console.log("- Autopublish and insecure are on by default for you to test it out.");
