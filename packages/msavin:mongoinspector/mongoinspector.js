@@ -1,18 +1,19 @@
-var origCollection = Meteor.Collection,
-    activeCollections = [],
-    activeCollectionDep = new Tracker.Dependency;
-
-Meteor.Collection = function (name, options) {
-    var instance = new origCollection(name, options);
-    activeCollections.push({
-        name: name,
-        instance: instance
-    });
-    activeCollectionDep.changed();
-    return instance;
-};
 
 if (Meteor.isClient) {
+
+    var origCollection = Meteor.Collection,
+        activeCollections = [],
+        activeCollectionDep = new Tracker.Dependency;
+
+    Meteor.Collection = function (name, options) {
+        var instance = new origCollection(name, options);
+        activeCollections.push({
+            name: name,
+            instance: instance
+        });
+        activeCollectionDep.changed();
+        return instance;
+    };
 
     Template.body.helpers({
         MongoInspector_collections: function () {

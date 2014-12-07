@@ -7,15 +7,15 @@ Package.describe({
 });
 
 Package.onUse(function(api) {
-    
+
   var clientFiles = [
   	"mongoinspector.html",
   	"mongoinspector.css",
   	"mongoinspector.js"
   ];
-  
+
   api.versionsFrom('1.0');
-  api.use(['templating'], 'client');
+  api.use(['templating','tracker'], 'client');
   api.add_files(clientFiles);
 
 });
