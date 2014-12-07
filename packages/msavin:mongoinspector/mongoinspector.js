@@ -1,18 +1,6 @@
 if (Meteor.isClient) {
 
     Template.body.helpers({
-        MongoInspector_enabled: function() {
-
-            var cordova   = Meteor.isCordova;
-
-
-            if (cordova   === true) {
-                return false;
-            } else {
-                return true;
-            }
-
-        },
         MongoInspector_collections: function () {
               
             // Detecting Collections automatically 
