@@ -32,3 +32,9 @@
   color: rgba(0, 0, 0, 0.8);
   background: #fff;
   transition: 0.7s; }
+
+@media (max-width: 768px) {
+  #MongoInspector {
+    display: none;
+  }
+}

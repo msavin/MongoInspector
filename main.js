@@ -1,6 +1,6 @@
-List        = new Meteor.Collection('List');
-Your        = new Meteor.Collection('Your');
-Collections = new Meteor.Collection('Collections');
+Vendors        = new Meteor.Collection('vendors');
+Products       = new Meteor.Collection('products');
+Cart		   = new Meteor.Collection('card');
 
 // var MyApp;
 // var myCollection = new Mongo.Collection('mycollection');
