@@ -35,6 +35,26 @@ body {
 
 }
 
+.github {
+	height: 34px;
+	margin-top: -5px;
+	margin-right: 10px;
+	opacity: .4;
+	float: right;
+	clear: both;
+}
+
+.github:hover {
+	opacity: .8;
+	cursor: pointer;
+}
+
+.title .spacer {
+	width: 46px;
+	float: left;
+	height: 1px;
+
+}
 
 .header {
 	font-weight: bold;
