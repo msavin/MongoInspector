@@ -1,15 +1,13 @@
 <body>
 	<div id="MongoInspector">	
 		{{> MongoInspector_header}}
-		{{#if MongoInspector_collections}}
 			{{#each MongoInspector_collections}}
-				{{> MongoInspector_collection}}
+				{{> MongoInspector_collection}}			
+			{{else}}
+				{{> MongoInspector_setup}}
 			{{/each}}
-		{{else}}
-			{{> MongoInspector_setup}}
 		{{/if}}
 	</div>
-
 </body>
 
 <template name="MongoInspector_collection">
@@ -22,20 +20,14 @@
 </template>
 
 <template name="MongoInspector_setup">
-	<a href="http://mongoinspector.meteor.com/">
-		<div class="MongoInspector_row">
-			Congratulations on installing MongoInspector.<br>
-			Please refer to the <u>docs</u> to activate it.
-		</div>
-	</a>
+	<div class="MongoInspector_row">
+		No Collections
+	</div>
 </template>
 
 <template name="MongoInspector_header">
 	<div class="MongoInspector_header">
 		MongoInspector
-	<!-- 	<div class="MongoInspector_close">
-			&times;
-		</div> -->
 	</div>
 </template>
 
