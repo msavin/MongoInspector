@@ -1,5 +1,6 @@
 var origCollection = Meteor.Collection,
-    activeCollections = [];
+    activeCollections = [],
+    activeCollectionDep = new Tracker.Dependency;
 
 Meteor.Collection = function (name, options) {
     var instance = new origCollection(name, options);
@@ -7,6 +8,7 @@ Meteor.Collection = function (name, options) {
         name: name,
         instance: instance
     });
+    activeCollectionDep.changed();
     return instance;
 };
 
@@ -14,8 +16,8 @@ if (Meteor.isClient) {
 
     Template.body.helpers({
         MongoInspector_collections: function () {
+            activeCollectionDep.depend();
             return activeCollections;
-
         }
     });
 
