@@ -11,6 +11,7 @@
   font-size: 14px;
   line-height: 28px;
   border-radius: 0 5px 0 0;
+  max-width: 160px;
   overflow: hidden; }
 .MongoInspector_header {
   padding: 0 8px;
@@ -21,10 +22,21 @@
 .MongoInspector_row {
   margin-top: 1px;
   box-shadow: 0 -1px 0 0 rgba(255, 255, 255, 0.2);
-  padding: 0 8px; }
+  padding-left: 8px;
+  padding-right: 34px;
+  overflow: hidden;
+  text-overflow:  ellipsis;
+  white-space: nowrap;
+
+  position: relative;
+}
 .MongoInspector_count {
   float: right;
-  margin-left: 8px; }
+  margin-left: 8px; 
+  position: absolute;
+  top: 0;
+  right: 8px;
+}
 .MongoInspector_row:hover {
   background: #000;
   cursor: pointer; }
@@ -32,6 +44,7 @@
   color: rgba(0, 0, 0, 0.8);
   background: #fff;
   transition: 0.7s; }
+
 
 @media (max-width: 768px) {
   #MongoInspector {
