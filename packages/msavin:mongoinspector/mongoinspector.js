@@ -1,17 +1,20 @@
 
 if (Meteor.isClient) {
 
+
     var origCollection = Mongo.Collection,
         activeCollections = [],
         activeCollectionDep = new Tracker.Dependency;
 
-    Mongo.Collection = function (name, options) {
+    Meteor.Collection = function (name, options) {
         var instance = new origCollection(name, options);
+    
         activeCollections.push({
             name: name,
             instance: instance
         });
         activeCollectionDep.changed();
+    
         return instance;
     };
 

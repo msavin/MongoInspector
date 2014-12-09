@@ -15,7 +15,7 @@ Package.onUse(function(api) {
   ];
 
   api.versionsFrom('1.0');
-  api.use(['templating','tracker'], 'client');
+  api.use(['templating','tracker','mongo'], 'client');
   api.add_files(clientFiles);
 
 });
