@@ -1,4 +1,31 @@
 if (Meteor.isClient) {
+
+    // Start JSON Colorization
+    
+    var MongoInspector_Colorize = function (json) {
+        if (typeof json != 'string') {
+             json = JSON.stringify(json, undefined, 2);
+        }
+        json = json.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+        return json.replace(/("(\\u[a-zA-Z0-9]{4}|\\[^u]|[^\\"])*"(\s*:)?|\b(true|false|null)\b|-?\d+(?:\.\d*)?(?:[eE][+\-]?\d+)?)/g, function (match) {
+            var cls = 'MongoInspector_number';
+            if (/^"/.test(match)) {
+                if (/:$/.test(match)) {
+                    cls = 'MongoInspector_key';
+                } else {
+                    cls = 'MongoInspector_string';
+                }
+            } else if (/true|false/.test(match)) {
+                cls = 'MongoInspector_boolean';
+            } else if (/null/.test(match)) {
+                cls = 'MongoInspector_null';
+            }
+            return '<span class="' + cls + '">' + match + '</span>';
+        });
+    }
+    
+    // End 
+
     Template.MongoInspector_documentViewer.helpers({
         currentDocument: function () {
             // var collection = this.instance;
@@ -14,7 +41,8 @@ if (Meteor.isClient) {
                 docNumber   = Session.get("MongoInspector") - 1,
                 docCurrent  = documents[docNumber],
                 json_output = JSON.stringify(docCurrent, null, 2);
-            return json_output;
+                colorize    = MongoInspector_Colorize(json_output);
+                return colorize;
         },
         enableRightArrow: function () {
             var currentDocument = Session.get("MongoInspector"),

@@ -154,3 +154,9 @@
     display: none;
   }
 }
+
+.MongoInspector_string { color: green; }
+.MongoInspector_number { color: darkorange; }
+.MongoInspector_boolean { color: blue; }
+.MongoInspector_null { color: magenta; }
+.MongoInspector_key { color: red; }
