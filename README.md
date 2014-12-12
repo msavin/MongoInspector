@@ -10,4 +10,6 @@ Gain a visual view of how your application and collections are operating.
  - To learn more, go to http://mongoinspector.meteor.com
  - To use, run "meteor add msavin:mongoinspector"
 
-Note: Make sure you are using Mongo.Collection() instead of the (now deprecated) Meteor.Collection().
+# Important Notes
+- The CSS is namespaced, so there should be no clash between your application and this package. We also reserve the "MongoInspector" session variable.
+- Currently the package only supports Meteor.Collections. I'm working on support for Mongo.Collections but its causing strange issues. A temporary (no cost) solution is to rename your Mongo.Collection to Meteor.Collection.

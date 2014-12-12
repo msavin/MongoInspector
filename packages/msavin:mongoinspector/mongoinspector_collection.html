@@ -1,0 +1,9 @@
+<template name="MongoInspector_collection">
+	<div class="MongoInspector_row" id="MongoInspector_{{name}}">
+		{{name}} 
+		<div class="MongoInspector_count">
+			<span class="MongoInspectorHide">{{currentPosition}}</span>{{collectionCount}}
+		</div>
+		{{> MongoInspector_documentViewer}}
+	</div>
+</template>

@@ -1,7 +1,7 @@
 Package.describe({
   name:    'msavin:mongoinspector',
   summary: 'A real-time window into how your application and collections are operating.',
-  version: '1.1.2',
+  version: '2.0.0',
   git:     'https://github.com/msavin/MongoInspector.git',
   debugOnly: true
 });
@@ -9,9 +9,13 @@ Package.describe({
 Package.onUse(function(api) {
 
   var clientFiles = [
-  	"mongoinspector.html",
-  	"mongoinspector.css",
-  	"mongoinspector.js"
+    "mongoinspector.css",
+    "mongoinspector_body.html",
+    "mongoinspector_documentViewer.html",
+    "mongoinspector_documentViewer.js",
+    "mongoinspector_collection.html",
+    "mongoinspector_collection.js",
+  	"mongoinspector_body.js"
   ];
 
   api.versionsFrom('1.0');

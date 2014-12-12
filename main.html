@@ -4,43 +4,61 @@
 </head>
 
 <body>
+	{{> title}}
+	{{> subHeader}}
+	{{> content}}
+</body>
+
+<template name="title">
 	<div class="title">
 		<a href="https://github.com/msavin/MongoInspector">
 			<img class="github" src="github.png">
 		</a>
 		<div class="spacer"></div>
-		MongoInspector for Meteor
+			MongoInspector <i>for Meteor</i>
 	</div>
-	<div class="body">
+</template>
+
+<template name="subHeader">
+	<div class="subHeader">
+		meteor add msavin:mongoinspector
+	</div>
+</template>
+
+
+<template name="content">
+	<div class="content">
 		<br>
-		<div class="header">#&nbsp; Less Time in Console, More Time Building</div>
-		A big part of the Meteor game is publishing and subscribing to data. However, as you change your routes and/or subscriptions, you may accidentally unsubscribe or oversubscribe to data without noticing it. That's why I created this package - to give you a real-time window into how your application and collections are operating. It's great for beginners to observe how collections work, and for experts to build even faster. 
+		A big part of the Meteor game is publishing and subscribing to data. However, as you change your routes and/or subscriptions, you may accidentally unsubscribe or oversubscribe to data without noticing it. That's why I created this package - to give you a real-time window into how your application and collections are operating. After all, why should the database be a black box? MongoInspector is a great tool for beginners to observe how collections work, and for experts to build even faster. 
 		<br><br>
 
 		<div class="header">#&nbsp; Main Benefits</div>
-		<span>&bull;</span> Watch your collections update in real-time in the browser  (see bottom left corner)<br>
-		<span>&bull;</span> Click on a collection to run "<code>console.log(Collection.find().fetch())</code>"<br>
-		<span>&bull;</span> Click on the title to remove it from the window<br>
+		<span>&bull;</span> Watch your subscriptions update in the browser  (see bottom left corner)<br>
+		<span>&bull;</span> Click on a collection to browse its documents<br>
+		<span>&bull;</span> Click on the widget's title to hide it<br>
 		<br>
 
-		<div class="header">#&nbsp; How To Install</div>
-		<span>&bull; </span> Run "<code>meteor add msavin:mongoinspector</code>"<br>
+		<div class="header">#&nbsp; Technical Features</div>
+		<span>&bull;</span> Does not intrude with your application code<br>
+		<span>&bull;</span> Does not compile into production code<br>
+		<span>&bull;</span> No configuration necessary <br>
 		<br>
 
-		<div class="header">#&nbsp; Questions &amp; Answers</div>
-		<span>Q:</span> Will this hurt the performance of my application?<br>
-		<span>A:</span> Nope, MongoInspector is light and only lives on the client.<br>
+		<div class="header">#&nbsp; Created by Max Savin</div>
+		&bull; Website: <a href="http://maxsavin.com">maxsavin.com</a><br>
+		&bull; Twitter: <a href="http://twitter.com/msavin" target="_blank">@msavin</a><br>
+		&bull; Contact: <a href="mailto:contact@maxsavin.com?subject=MongoInspector">contact@maxsavin.com</a><br>
+		&bull; Let me know what you think<br>
+		&bull; Available for Work: Yes<br>
 		<br>
 
-		<span>Q:</span> Will this run in production?<br>
-		<span>A:</span> No, the package uses the debugOnly parameter, so it won't even be compiled into production.<br>
-		<br>
 
-		<span>Q:</span> What is the future of MongoInspector?<br>
-		<span>A:</span> Currently, the package is simple and stable. The ultimate goal is to create a visual way for you to browse your client side data and see how your client is operating in real time. I'd love to hear your feedback on this package and where you think it should go as well.<br>
-		<br>
 
 		<div class="header">#&nbsp; Changelog</div>
+		<span><strong>v2.0.0</strong></span><br>
+		 - Added functionality to view and browse documents in JSON format<br>
+		<br>
+
 		<span><strong>v1.1.1</strong></span><br>
 		 - Removed Cordova check in favor of responsive approach<br>
 		 - Automatic detection of collections is way leaner now (thanks jonjamz!)<br>
@@ -54,12 +72,5 @@
 		<span><strong>v1.0.0</strong></span><br>
 		- Initial version launched<br>
 		<br>
-		<div class="header">#&nbsp; Thanks for reading! Feel free to contact me!</div>
-		&bull; Max Savin<br>
-		&bull; <a href="http://twitter.com/msavin" target="_blank">@msavin</a><br>
-		&bull; <a href="mailto:contact@maxsavin.com?subject=MongoInspector">contact@maxsavin.com</a><br>
-		&bull; <a href="http://maxsavin.com">maxsavin.com</a><br>
-		&bull; PS: I'm available for work<br>
-		<br>
 	</div>
-</body>
+</template>

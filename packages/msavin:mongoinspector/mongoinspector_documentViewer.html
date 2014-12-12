@@ -1,0 +1,13 @@
+<template name="MongoInspector_documentViewer">
+	<div class="MongoInspector_documentViewer">
+		<div class="MongoInspector_buttons">
+			<div id="{{makeRightClickable}}" class="{{enableRightArrow}}">&rsaquo;</div>
+			<div id="{{makeLeftClickable}}" class="{{enableLeftArrow}}">&lsaquo;</div>
+		</div>
+			{{#if documentJSON}}
+				<pre>{{documentJSON}}</pre>
+			{{else}}
+				<pre>No documents found.</pre>
+			{{/if}}
+	</div>
+</template>

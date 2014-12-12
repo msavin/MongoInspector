@@ -1,34 +1,48 @@
+/* Regular View */
+
 #MongoInspector {
   opacity: 0.6;
   position: fixed;
   left: 0;
   bottom: 0;
   padding: 0px;
-  background: rgba(0, 0, 0, 0.8);
+  background: #232323;
   color: #fff;
   font-family: monospace;
-  z-index: 9999999999;
+  z-index: 9999999997;
   font-size: 14px;
   line-height: 28px;
   border-radius: 0 5px 0 0;
-  max-width: 160px;
-  overflow: hidden; }
+  width: 100%;
+  max-width: 150px;
+  overflow: hidden;
+  transition: .3s;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none; }
 .MongoInspector_header {
   padding: 0 8px;
+  height: 28px;
   font-weight: bold;
-  background: #000; }
+  background: #000;}
 .MongoInspector_header:hover {
   cursor: pointer; }
 .MongoInspector_row {
-  margin-top: 1px;
-  box-shadow: 0 -1px 0 0 rgba(255, 255, 255, 0.2);
-  padding-left: 8px;
-  padding-right: 34px;
+  padding: 0 8px;
   overflow: hidden;
   text-overflow:  ellipsis;
   white-space: nowrap;
-
+  height: 28px;
   position: relative;
+  transition: .3s;
+  background-image: -moz-linear-gradient(rgba(0,0,0,.62), rgba(0,0,0,0));
+  background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(rgba(0,0,0,.62)), to(rgba(0,0,0,0)));
+  background-image: -webkit-linear-gradient(rgba(0,0,0,.62), rgba(0,0,0,0));
+  background-image: -o-linear-gradient(rgba(0,0,0,.62), rgba(0,0,0,0));
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='rgba(0,0,0,.62)', endColorstr='rgba(0,0,0,0)',GradientType=0);
 }
 .MongoInspector_count {
   float: right;
@@ -38,13 +52,102 @@
   right: 8px;
 }
 .MongoInspector_row:hover {
-  background: #000;
   cursor: pointer; }
-.MongoInspector_row:active {
-  color: rgba(0, 0, 0, 0.8);
-  background: #fff;
-  transition: 0.7s; }
+.MongoInspectorHide {
+  display: none;
+  opacity: 0;
+  transition: .3s;
+}
+.MongoInspector_empty {
+  padding: 8px;
+  line-height: 16px;
+  font-size: 11px;
+}
 
+/* Expanded View */
+
+.MongoInspector_expand {
+  width: 100%;
+  max-width: 320px !important;
+  opacity: .85 !important;
+}
+
+.MongoInspector_expand .MongoInspectorHide {
+  display: inline;
+}
+
+.MongoInspector_row_expand {
+  height: 320px;
+  cursor: default !important;
+  /*background: #000;*/
+}
+
+.MongoInspector_row_expand .MongoInspectorHide {
+  opacity: 1;
+}
+
+.MongoInspector_documentViewer {
+  background: #232323;
+  height: 284px;
+  padding: 0 5px;
+  line-height: 20px;
+  border-radius: 5px;
+  overflow: scroll;
+  z-index: 9999999998;
+  position: relative;
+  opacity: 0;
+  transition: .3s;
+  color: #ccc;
+}
+.MongoInspector_documentViewer pre {
+  margin: 0px;
+  padding: 0px;
+  padding-top: 3px;
+  -webkit-touch-callout: text;
+  -webkit-user-select: text;
+  -khtml-user-select: text;
+  -moz-user-select: text;
+  -ms-user-select: text;
+  user-select: text;
+}
+
+.MongoInspector_row_expand .MongoInspector_documentViewer {
+  opacity: 1;
+}
+
+.MongoInspector_buttons { 
+  position: absolute;
+  right: 0;
+  border-radius: 0 0 0 5px;
+  overflow: hidden;
+
+}
+.MongoInspector_buttons div {
+  height: 28px;
+  width: 20px;
+  float: right;
+  text-align: center;
+  line-height: 22px;
+  font-size: 38px;
+  opacity: .15;
+  z-index: -1;
+  
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: normal;
+}
+
+.MongoInspector_buttons .mib_enabled {
+  opacity: 1!important;
+  z-index: 9999999999;
+}
+.MongoInspector_buttons .mib_enabled:hover {
+  cursor: pointer;
+}
+.MongoInspector_buttons .mib_enabled:active {
+  color: green;
+}
+
+/* Hide on mobile */
 
 @media (max-width: 768px) {
   #MongoInspector {

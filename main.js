@@ -1,6 +1,8 @@
-Vendor        = new Meteor.Collection('vendor');
-Product       = new Meteor.Collection('product');
-Cart		  = new Meteor.Collection('cart');
+Vendor        = new Meteor.Collection('Vendor');
+Product       = new Meteor.Collection('Product');
+Cart		  = new Meteor.Collection('Cart');
+Orders		  = new Meteor.Collection('Orders');
+
 
 if (Meteor.isClient) {
 	console.log("# MongoInspector");

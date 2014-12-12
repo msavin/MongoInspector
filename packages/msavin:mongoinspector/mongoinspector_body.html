@@ -4,23 +4,14 @@
 		{{#each MongoInspector_collections}}
 			{{> MongoInspector_collection}}
 		{{else}}
-			{{> MongoInspector_setup}}
+			{{> MongoInspector_empty}}
 		{{/each}}
 	</div>
 </body>
 
-<template name="MongoInspector_collection">
-	<div class="MongoInspector_row">
-		{{name}}
-		<div class="MongoInspector_count">
-			{{collectionCount}}
-		</div>
-	</div>
-</template>
-
-<template name="MongoInspector_setup">
-	<div class="MongoInspector_row">
-		No Collections
+<template name="MongoInspector_empty">
+	<div class="MongoInspector_empty">
+		No Collections. Make sure you are using Meteor.Collections until we have compatibility with Mongo.Collections
 	</div>
 </template>
 
