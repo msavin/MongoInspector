@@ -15,7 +15,6 @@ if (Meteor.isClient) {
                 var current = Session.get("MongoInspector");
                 return current + "/"
             }
-            
         }
     });
 

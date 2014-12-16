@@ -155,8 +155,8 @@
   }
 }
 
-.MongoInspector_string { color: green; }
-.MongoInspector_number { color: darkorange; }
-.MongoInspector_boolean { color: blue; }
-.MongoInspector_null { color: magenta; }
-.MongoInspector_key { color: red; }
+.MongoInspector_string  { color: #718c00; } /* green */
+.MongoInspector_number  { color: #f5871f; } /* dark orange */
+.MongoInspector_boolean { color: #4271ae; } /* blue */
+.MongoInspector_null    { color: #8959a8; } /* magenta */
+.MongoInspector_key     { color: #c82829; } /* red */

@@ -40,12 +40,11 @@ if (Meteor.isClient) {
                 var rowID = "#MongoInspector_" + collectionName;
 
                 if ($(rowID).hasClass("MongoInspector_row_current")) {
-                    console.log('true' + rowID);
+                    // Do nothing
                 } else {
                     $(".MongoInspector_row").removeClass("MongoInspector_row_current");
                     $("#MongoInspector_" + this.name).addClass("MongoInspector_row_current");
                     Session.set("MongoInspector", 1);
-                    console.log('false' + rowID);
                 }
                 // .. I'm sure we can use one less selector here
 

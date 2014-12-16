@@ -41,7 +41,9 @@ if (Meteor.isClient) {
                 docNumber   = Session.get("MongoInspector") - 1,
                 docCurrent  = documents[docNumber],
                 json_output = JSON.stringify(docCurrent, null, 2);
-                colorize    = MongoInspector_Colorize(json_output);
+                if (! (typeof json_output === "undefined")) {
+                    colorize    = MongoInspector_Colorize(json_output);
+                }
                 return colorize;
         },
         enableRightArrow: function () {
@@ -84,12 +86,10 @@ if (Meteor.isClient) {
         'click #MongoInspector_prev': function () {
             var docNumber = Session.get("MongoInspector");
             Session.set("MongoInspector", docNumber - 1);
-            console.log('minus one');
         },
         'click #MongoInspector_next': function () {
             var docNumber = Session.get("MongoInspector");
             Session.set("MongoInspector", docNumber + 1);
-            console.log('plus one');
         }
     });
 }
