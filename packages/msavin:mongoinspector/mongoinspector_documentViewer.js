@@ -43,6 +43,8 @@ if (Meteor.isClient) {
                 json_output = JSON.stringify(docCurrent, null, 2);
                 if (! (typeof json_output === "undefined")) {
                     colorize    = MongoInspector_Colorize(json_output);
+                } else {
+                    colorize    = json_output;
                 }
                 return colorize;
         },
