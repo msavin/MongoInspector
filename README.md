@@ -3,11 +3,11 @@ Gain a visual view of how your application and collections are operating.
 
 # Main Benefits
  - Watch your collections update in real-time in the browser
- - Click on a collection to run "console.log(Collection.find().fetch())"
+ - Click on a collection to browse its documents
  - Click on the title to remove it from the window
 
 # Try It
- - To learn more, go to http://mongoinspector.meteor.com
+ - To see it in action, go to http://mongoinspector.meteor.com
  - To use, run "meteor add msavin:mongoinspector"
 
 # Important Notes
