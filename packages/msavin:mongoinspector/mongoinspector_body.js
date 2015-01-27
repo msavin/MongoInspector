@@ -6,17 +6,30 @@ if (Meteor.isClient) {
         MongoInspector_activeCollections = [],
         MongoInspector_activeCollectionDep = new Tracker.Dependency;
 
-    Meteor.Collection = function (name, options) {
-        var instance = new MongoInspector_origCollection(name, options);
-    
+    Mongo.Collection = Meteor.Collection = function () {
+        MongoInspector_origCollection.apply(this, arguments);
+        var label, name;
+        if (arguments.length === 2 && arguments[1]) {
+            label = arguments[1].label;
+        }
+        label = label || 'local_';
+        name = arguments[0] || '_' + label;
         MongoInspector_activeCollections.push({
             name: name,
-            instance: instance
+            instance: this
         });
         MongoInspector_activeCollectionDep.changed();
-    
-        return instance;
+
+        return this;
     };
+
+    Mongo.Collection.prototype = Meteor.Collection.prototype = Object.create(MongoInspector_origCollection.prototype);
+
+    for (var func in MongoInspector_origCollection) {
+      if (MongoInspector_origCollection.hasOwnProperty(func)) {
+        Mongo.Collection[func] = Meteor.Collection[func] = MongoInspector_origCollection[func];
+      }
+    }
 
     Template.body.helpers({
         MongoInspector_collections: function () {
@@ -31,10 +44,10 @@ if (Meteor.isClient) {
             $("#MongoInspector").removeClass("MongoInspector_expand");
         },
         'click .MongoInspector_row': function () {
-            
+
             var collectionName = this.name;
             var thisCollection = this.instance;
-            
+
             // Start Hacky Code
 
                 var rowID = "#MongoInspector_" + collectionName;
@@ -51,7 +64,7 @@ if (Meteor.isClient) {
             $(".MongoInspector_row").removeClass("MongoInspector_row_expand");
             $("#MongoInspector_" + this.name).addClass("MongoInspector_row_expand");
             $("#MongoInspector").addClass("MongoInspector_expand");
-            
+
             // End, Refactor Later
 
         }
