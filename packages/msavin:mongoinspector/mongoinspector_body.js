@@ -1,6 +1,7 @@
 if (Meteor.isClient) {
 
     // Detect Collections
+    // Special thanks to Krawalli & JonJamz from GitHub
 
     var MongoInspector_origCollection = Mongo.Collection,
         MongoInspector_activeCollections = [],
@@ -48,7 +49,7 @@ if (Meteor.isClient) {
             var collectionName = this.name;
             var thisCollection = this.instance;
 
-            // Start Hacky Code
+            // I'm sure we can use one less selector here ..
 
                 var rowID = "#MongoInspector_" + collectionName;
 
@@ -59,13 +60,12 @@ if (Meteor.isClient) {
                     $("#MongoInspector_" + this.name).addClass("MongoInspector_row_current");
                     Session.set("MongoInspector", 1);
                 }
-                // .. I'm sure we can use one less selector here
-
+                
             $(".MongoInspector_row").removeClass("MongoInspector_row_expand");
             $("#MongoInspector_" + this.name).addClass("MongoInspector_row_expand");
             $("#MongoInspector").addClass("MongoInspector_expand");
 
-            // End, Refactor Later
+            // End
 
         }
     });

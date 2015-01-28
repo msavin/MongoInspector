@@ -1,7 +1,7 @@
-Vendor        = new Meteor.Collection('Vendor');
-Product       = new Meteor.Collection('Product');
-Cart		  = new Meteor.Collection('Cart');
-Orders		  = new Meteor.Collection('Orders');
+Vendor        = new Mongo.Collection('Vendor');
+Product       = new Mongo.Collection('Product');
+Cart		  = new Mongo.Collection('Cart');
+Orders		  = new Mongo.Collection('Orders');
 
 
 if (Meteor.isClient) {

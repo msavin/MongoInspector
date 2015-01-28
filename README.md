@@ -1,15 +1,16 @@
 # MongoInspector
-Gain a visual view of how your application and collections are operating. 
+ - Visual Browser for your Mongo Collections
 
 # Main Benefits
  - Watch your collections update in real-time in the browser
  - Click on a collection to browse its documents
  - Click on the title to remove it from the window
 
-# Try It
- - To see it in action, go to http://mongoinspector.meteor.com
- - To use, run "meteor add msavin:mongoinspector"
+#  Technical Features
+ - Does not intrude with your application code
+ - Does not compile into production code
+ - Automatically detects your collections
 
-# Important Notes
-- The CSS is namespaced, so there should be no clash between your application and this package. The package also uses the "MongoInspector" session variable.
-- Currently the package only supports Meteor.Collections. I'm working on support for Mongo.Collections but its causing strange issues. A temporary (no cost) solution is to rename your Mongo.Collection() to Meteor.Collection().
+
+Demo: http://mongoinspector.meteor.com
+Update (01/27/14): Now automatically detects Meteor.Collections() and Mongo.Collections()
