@@ -71,9 +71,14 @@ if (Meteor.isClient) {
     });
 
     Template.MongoInspector_header.events({
-        'click': function () {
-            $("#MongoInspector").hide();
+      'click': function () {
+        if ($('#MongoInspector').hasClass('MongoInspector_expand')) {
+          $('.MongoInspector_row').removeClass('MongoInspector_row_expand');
+          $('#MongoInspector').removeClass('MongoInspector_expand');
+        } else {
+          $("#MongoInspector").hide();
         }
+      }
     });
 
 
