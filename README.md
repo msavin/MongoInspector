@@ -17,7 +17,6 @@
  - "Nice tool to inspect your databases"
  - "This rocks! So insanely handy and so easy to install. "
 
-
 # Latest Updates:
  - 01/27/14: Added support for minimize when clicking the header
  - 01/27/14: Now automatically detects Meteor.Collections() and Mongo.Collections()
