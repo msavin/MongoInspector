@@ -15,7 +15,9 @@
   border-radius: 0 5px 0 0;
   width: 100%;
   max-width: 150px;
-  overflow: hidden;
+  max-height: 100%;
+  overflow: scroll;
+
   transition: .3s;
   -webkit-touch-callout: none;
   -webkit-user-select: none;
@@ -27,7 +29,9 @@
   padding: 0 8px;
   height: 28px;
   font-weight: bold;
-  background: #000;}
+  background: #000;
+  border-radius: 0 5px 0 0;
+}
 .MongoInspector_header:hover {
   cursor: pointer; }
 .MongoInspector_row {
