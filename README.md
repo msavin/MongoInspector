@@ -1,17 +1,16 @@
-# MongoInspector
- - Visual browser for your client-side Mongo Collections
- - Live Demo: http://mongoinspector.meteor.com
+# Mongol
+ - First Beta (seems stable)
+ - Please send feedback to msavin@me.com
+ - To install, simply run "meteor add msavin:mongol"
 
-<img src="https://raw.githubusercontent.com/msavin/MongoInspector/master/screenshot.png" width="483">
+# The Insanely Handy Development Tool for Meteor
+- Browse Your Collections Visually
+- Insert, Update and Remove Documents
+- Hot Key Activation
+- As a Debug Package, Mongol Stays Out of Production Code 
 
-# Main Benefits
- - Watch your collections update in real-time in the browser
- - Click on a collection to browse its documents
- - Click on the title to minimize it or remove it
- - Does not compile into production code
- - Automatically detects your collections
+<a href="http://mongol.meteor.com"><img src="https://raw.githubusercontent.com/msavin/Mongol/master/public/video/gif.gif"></a><br>
 
-# What people are saying: 
- - "This is so useful, no more typing in the console to look at collections :)"
- - "Nice tool to inspect your databases"
- - "This rocks! So insanely handy and so easy to install. "
+Go to <a href="http://mongol.meteor.com">http://mongol.meteor.com</a> for more information and a live demo.
+
+<a href="https://github.com/msavin/Mongol/blob/master/LICENSE.md">Licensed under The MIT License</a>
