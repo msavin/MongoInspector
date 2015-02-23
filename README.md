@@ -1,6 +1,6 @@
-Mongol, The Insanely Handy Development Package for Meteor
+Mongol
 ======
-Boost your productivity by easily viewing and modifying your application's documents. With Mongol, you'll never have to use the console to see how your data is syncing. To start, simple run:
+Meet Mongol, the insanely handy development package for Meteor. You'll never have to enter the console to play with your data again. To enjoy the productivity boost, simple run:
 
 	meteor add msavin:mongol
 
