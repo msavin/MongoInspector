@@ -1,35 +1,21 @@
-Mongol
-======
-Meet Mongol, the insanely handy development package for Meteor. You'll never have to enter the console to play with your data again. To enjoy the productivity boost, simple run:
+# DEPRECATED
+ - Since MongoInspector evolved beyond an inspection tool, I am changing its name to Mongol. 
+ - See https://github.com/msavin/Mongol
 
-	meteor add msavin:mongol
+# MongoInspector
+ - Visual browser for your client-side Mongo Collections
+ - Live Demo: http://mongoinspector.meteor.com
 
+<img src="https://raw.githubusercontent.com/msavin/MongoInspector/master/screenshot.png" width="483">
 
-Browse Your Collections
------------------------
-Mongol will automatically monitor your collections, and display the documents that you are subscribing to. Click on the collection name to see what it contains.
+# Main Benefits
+ - Watch your collections update in real-time in the browser
+ - Click on a collection to browse its documents
+ - Click on the title to minimize it or remove it
+ - Does not compile into production code
+ - Automatically detects your collections
 
-
-Easily Modify Your Documents
-----------------------------
-<a href="http://mongol.meteor.com"><img src="https://raw.githubusercontent.com/msavin/Mongol/master/public/video/gif.gif"></a><br>
-Through a special set of methods, Mongol is able to insert, update and remove any document that you ask it to, regardless if you have insecure on or the permissions to allow it. 
-
-
-Hot Key Activation
-------------------
-Mongol won't render into the DOM until you tell it to do so. When you need it, simple press CONTROL + M and it'll be right there. 
-
-
-Security & "debug-only"
------------------------
-Mongol is able to edit any document in your database, regardless of whether you have insecure on or the permissions to allow it. It does so through a special set of methods that allow it execute virtually any code on the server. This is great because it allows you to use your application in its natural" state, while helping you make quick database edits when you need to.
-
-When you deploy your Meteor application (meteor deploy xxx), Meteor will automatically remove the package from the codebase because its a "debug-only" package. However, if you deploy it in debug mode (meteor deploy xxx --debug), you will upload Mongol's methods with it. If that case that you are deploying your application in debug mode, you should remove the package before pushing it.
-
-
-Additional Information
-----------------------
- - Licensed under MIT: https://github.com/msavin/Mongol/blob/master/LICENSE.md
- - Live Demo: http://mongol.meteor.com
- - Created by <a href="http://maxsavin.com">Max Savin</a>
+# What people are saying: 
+ - "This is so useful, no more typing in the console to look at collections :)"
+ - "Nice tool to inspect your databases"
+ - "This rocks! So insanely handy and so easy to install. "
